@@ -8,13 +8,13 @@ Quick Start
     - VS Code
 
 ### Clone this repository
-
+    https://github.com/ayuanriyani/AutomationAPI-robotframework.git
     
 ### Run the tests for API
     robot --outputdir report/api/ testcase/
 
 ### NOTE
-Before use robotframework , please use file requirement.txt  => 
+Before run robotframework , please use file requirement.txt  => 
     pip install -r requirements.txt
 
 For perform API testing in Robot Framework. please prepare libraries for our tests. They are:
@@ -27,8 +27,6 @@ For perform API testing in Robot Framework. please prepare libraries for our tes
 ### Please See Recommandation for installed
 
     https://robotframework.org/
-
-
 
 **ENJOY**
 
