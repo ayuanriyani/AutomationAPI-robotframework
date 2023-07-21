@@ -42,7 +42,7 @@ Validate Status Code and Response Body
     ${createdAt}=       Set Variable        ${jsondata}[createdAt]
 
     #verify data value name >100char
-    ${length100char}=          Get Length            ${name}         #Here we get length of your input   
+    ${length100char}=          Get Length            ${job}         #Here we get length of your input   
     Log     ${length100char}
     ${value}=    Convert To String    ${length100char}                                             #Here we can check what is the length (it is not necessary)
     ${check} =    Evaluate      ${value} > 100                 #Here we evaluate that input is more than 100  and get status (True or False)
