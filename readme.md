@@ -24,6 +24,18 @@ For perform API testing in Robot Framework. please prepare libraries for our tes
 4. Collections – This comes inbuilt with robot Framework. We just need to import it. https://robotframework.org/robotframework/latest/libraries/Collections.html
 5. BuiltIn – Robot Framework’s standard library that provides a set of generic keywords. No need to import as it is always available.
 
+### Recording Run Test and See Report
+
+
+
+https://github.com/ayuanriyani/AutomationAPI-robotframework/assets/17001815/65ebb784-92f4-4421-b20e-d9566ca7528c
+
+
+
+https://github.com/ayuanriyani/AutomationAPI-robotframework/assets/17001815/51b3e026-3a0e-47f6-b23c-7db4eb23151d
+
+
+
 ### Please See Recommandation for installed
 
     https://robotframework.org/
