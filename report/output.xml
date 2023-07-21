@@ -1,0 +1,2133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1 (Python 3.11.4 on win32)" generated="20230721 15:50:26.589" rpa="false" schemaversion="4">
+<suite id="s1" name="Testcase" source="D:\Testing-Interview\Bhumi Varta\AUTOMATION-API\testcase">
+<suite id="s1-s1" name="DELETE-TCP001-User" source="D:\Testing-Interview\Bhumi Varta\AUTOMATION-API\testcase\DELETE-TCP001-User.robot">
+<test id="s1-s1-t1" name="TCP-001 Delete User successfully" line="12">
+<kw name="Validate Status Code and Response Body">
+<tag>DELETE</tag>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>listuser</arg>
+<arg>${base_url}</arg>
+<arg>verify=True</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230721 15:50:26.822" level="INFO">Creating Session using : alias=listuser, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<status status="PASS" starttime="20230721 15:50:26.821" endtime="20230721 15:50:26.822"/>
+</kw>
+<kw name="DELETE On Session" library="RequestsLibrary">
+<var>${Response}</var>
+<arg>listuser</arg>
+<arg>/api/users/${Id_user}</arg>
+<doc>Sends a DELETE request on a previously created HTTP Session.</doc>
+<msg timestamp="20230721 15:50:27.288" level="INFO">DELETE Request : url=https://reqres.in/api/users/5 
+ path_url=/api/users/5 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg timestamp="20230721 15:50:27.288" level="INFO">DELETE Response : url=https://reqres.in/api/users/5 
+ status=204, reason=No Content 
+ headers={'Date': 'Fri, 21 Jul 2023 08:50:29 GMT', 'Content-Length': '0', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"2-vyGp6PvFo4RvsFtPoIWeCReyIC8"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=U6rUpYoHulc6bc8Md8gaHGtJU59Y%2BfEj%2B302%2FXGq1zFtLzPNdlvSBIZ7MIr2USOMVBb5akqt2zjn9bRryOS5hjICtXf6WZsHDnPbDj9Rg2COBLTXMDa5IT%2Byjw%3D%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '7ea232511ad64014-SIN'} 
+ body=None 
+ </msg>
+<msg timestamp="20230721 15:50:27.288" level="INFO">${Response} = &lt;Response [204]&gt;</msg>
+<status status="PASS" starttime="20230721 15:50:26.822" endtime="20230721 15:50:27.289"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${Response.status_code}</arg>
+<arg>204</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20230721 15:50:27.289" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20230721 15:50:27.289" endtime="20230721 15:50:27.289"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${Response.reason}</arg>
+<arg>No Content</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20230721 15:50:27.289" endtime="20230721 15:50:27.289"/>
+</kw>
+<status status="PASS" starttime="20230721 15:50:26.821" endtime="20230721 15:50:27.289"/>
+</kw>
+<status status="PASS" starttime="20230721 15:50:26.820" endtime="20230721 15:50:27.290"/>
+</test>
+<doc>Negative Testcase - Delete User successfully</doc>
+<status status="PASS" starttime="20230721 15:50:26.611" endtime="20230721 15:50:27.291"/>
+</suite>
+<suite id="s1-s2" name="GET-TCN001-User" source="D:\Testing-Interview\Bhumi Varta\AUTOMATION-API\testcase\GET-TCN001-User.robot">
+<test id="s1-s2-t1" name="TCN-001 Get list user successfully" line="10">
+<kw name="Validate Status Code and Response Body">
+<tag>GET</tag>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>listuser</arg>
+<arg>${base_url}</arg>
+<arg>verify=True</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230721 15:50:27.303" level="INFO">Creating Session using : alias=listuser, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<status status="PASS" starttime="20230721 15:50:27.303" endtime="20230721 15:50:27.303"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${Response}</var>
+<arg>listuser</arg>
+<arg>/api/use</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20230721 15:50:27.412" level="INFO">GET Request : url=https://reqres.in/api/use 
+ path_url=/api/use 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20230721 15:50:27.412" level="INFO">GET Response : url=https://reqres.in/api/use 
+ status=200, reason=OK 
+ headers={'Date': 'Fri, 21 Jul 2023 08:50:29 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"2c1-N6Rqerxquq2kgQhL51EiSg4x0R8"', 'Via': '1.1 vegur', 'Cache-Control': 'max-age=14400', 'CF-Cache-Status': 'HIT', 'Age': '5576', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=6He2tz2FLLR9P8%2BfgV0eLPel7nUuQ4ynvJuZSDFKPXmX0FooNbXcfRn1RnfsaTKTupvT5mOVfQlV6mpJjHJLsjN0uObz3G1bvVr2UdwLuZqjckjP%2FExlnhoeEA%3D%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '7ea232540f7d4918-SIN', 'Content-Encoding': 'gzip'} 
+ body={"page":1,"per_page":6,"total":12,"total_pages":2,"data":[{"id":1,"name":"cerulean","year":2000,"color":"#98B2D1","pantone_value":"15-4020"},{"id":2,"name":"fuchsia rose","year":2001,"color":"#C74375","pantone_value":"17-2031"},{"id":3,"name":"true red","year":2002,"color":"#BF1932","pantone_value":"19-1664"},{"id":4,"name":"aqua sky","year":2003,"color":"#7BC4C4","pantone_value":"14-4811"},{"id":5,"name":"tigerlily","year":2004,"color":"#E2583E","pantone_value":"17-1456"},{"id":6,"name":"blue turquoise","year":2005,"color":"#53B0AE","pantone_value":"15-5217"}],"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}} 
+ </msg>
+<msg timestamp="20230721 15:50:27.413" level="INFO">${Response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230721 15:50:27.303" endtime="20230721 15:50:27.413"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${status_code}</var>
+<arg>${Response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20230721 15:50:27.413" level="INFO">${status_code} = 200</msg>
+<status status="PASS" starttime="20230721 15:50:27.413" endtime="20230721 15:50:27.413"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${status_code}</arg>
+<arg>500</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<msg timestamp="20230721 15:50:27.414" level="FAIL">200 != 500</msg>
+<status status="FAIL" starttime="20230721 15:50:27.413" endtime="20230721 15:50:27.414"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${content}</var>
+<arg>${Response.content}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" starttime="20230721 15:50:27.414" endtime="20230721 15:50:27.414"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${Response.content}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20230721 15:50:27.414" endtime="20230721 15:50:27.414"/>
+</kw>
+<kw name="Should Contain Match" library="Collections">
+<arg>${Response.content}</arg>
+<arg>bad request</arg>
+<doc>Fails if ``pattern`` is not found in ``list``.</doc>
+<status status="NOT RUN" starttime="20230721 15:50:27.414" endtime="20230721 15:50:27.414"/>
+</kw>
+<status status="FAIL" starttime="20230721 15:50:27.302" endtime="20230721 15:50:27.414"/>
+</kw>
+<status status="FAIL" starttime="20230721 15:50:27.302" endtime="20230721 15:50:27.415">200 != 500</status>
+</test>
+<doc>Negative Testcase - Get List User with Wrong Endpoint</doc>
+<status status="FAIL" starttime="20230721 15:50:27.292" endtime="20230721 15:50:27.416"/>
+</suite>
+<suite id="s1-s3" name="GET-TCN002-User" source="D:\Testing-Interview\Bhumi Varta\AUTOMATION-API\testcase\GET-TCN002-User.robot">
+<test id="s1-s3-t1" name="TCN-002 Get list user with Param ID Not Exist" line="12">
+<kw name="Validate Status Code and Response Body">
+<tag>GET</tag>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>listuser</arg>
+<arg>${base_url}</arg>
+<arg>verify=True</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230721 15:50:27.427" level="INFO">Creating Session using : alias=listuser, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<status status="PASS" starttime="20230721 15:50:27.427" endtime="20230721 15:50:27.428"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${param}</var>
+<arg>id=${ID_param}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230721 15:50:27.428" level="INFO">${param} = {'id': '100'}</msg>
+<status status="PASS" starttime="20230721 15:50:27.428" endtime="20230721 15:50:27.428"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${Response}</var>
+<arg>listuser</arg>
+<arg>/api/users</arg>
+<arg>params=${param}</arg>
+<arg>expected_status=ANY</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20230721 15:50:27.880" level="INFO">GET Request : url=https://reqres.in/api/users?id=100 
+ path_url=/api/users?id=100 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20230721 15:50:27.880" level="INFO">GET Response : url=https://reqres.in/api/users?id=100 
+ status=404, reason=Not Found 
+ headers={'Date': 'Fri, 21 Jul 2023 08:50:29 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '2', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"2-vyGp6PvFo4RvsFtPoIWeCReyIC8"', 'Via': '1.1 vegur', 'Cache-Control': 'max-age=14400', 'CF-Cache-Status': 'EXPIRED', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=zkQqHhjUYSonrUYxTq72CpAWsQFyC1dFD5FSd6FV011WIgYG4K7zfmo6e0dfmAPk0U6C3r%2BzAua7MxH1hES9afSt5sCTHomyQcEtV9zddK9m2iu9oL6JPRovQw%3D%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '7ea23254cebd3fe5-SIN'} 
+ body={} 
+ </msg>
+<msg timestamp="20230721 15:50:27.880" level="INFO">${Response} = &lt;Response [404]&gt;</msg>
+<status status="PASS" starttime="20230721 15:50:27.428" endtime="20230721 15:50:27.880"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>Not Found</arg>
+<arg>${Response.reason}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20230721 15:50:27.880" endtime="20230721 15:50:27.881"/>
+</kw>
+<status status="PASS" starttime="20230721 15:50:27.427" endtime="20230721 15:50:27.881"/>
+</kw>
+<status status="PASS" starttime="20230721 15:50:27.426" endtime="20230721 15:50:27.881"/>
+</test>
+<doc>Negative Testcase - Get list user with Param ID Not Exist</doc>
+<status status="PASS" starttime="20230721 15:50:27.417" endtime="20230721 15:50:27.882"/>
+</suite>
+<suite id="s1-s4" name="GET-TCP001-User" source="D:\Testing-Interview\Bhumi Varta\AUTOMATION-API\testcase\GET-TCP001-User.robot">
+<test id="s1-s4-t1" name="TCP-001 Get list user successfully" line="10">
+<kw name="Validate Status Code and Response Body">
+<tag>GET</tag>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>listuser</arg>
+<arg>${base_url}</arg>
+<arg>verify=True</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230721 15:50:27.894" level="INFO">Creating Session using : alias=listuser, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<status status="PASS" starttime="20230721 15:50:27.894" endtime="20230721 15:50:27.894"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${Response}</var>
+<arg>listuser</arg>
+<arg>/api/users</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20230721 15:50:28.003" level="INFO">GET Request : url=https://reqres.in/api/users 
+ path_url=/api/users 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20230721 15:50:28.003" level="INFO">GET Response : url=https://reqres.in/api/users 
+ status=200, reason=OK 
+ headers={'Date': 'Fri, 21 Jul 2023 08:50:29 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"3e4-2RLXvr5wTg9YQ6aH95CkYoFNuO8"', 'Via': '1.1 vegur', 'Cache-Control': 'max-age=14400', 'CF-Cache-Status': 'HIT', 'Age': '2054', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=CrO2FbDj2t%2B80gj9hKzENof5FWN44COdG6KflG6g0emyeYlpaQ3R%2BfVUp0E5p2eJj7IhHolsiqq7jK3rGtClw5sogXwyfj0fzbvmfu1i8R0derYb9IT5M2Jefg%3D%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '7ea23257b93644b3-SIN', 'Content-Encoding': 'gzip'} 
+ body={"page":1,"per_page":6,"total":12,"total_pages":2,"data":[{"id":1,"email":"george.bluth@reqres.in","first_name":"George","last_name":"Bluth","avatar":"https://reqres.in/img/faces/1-image.jpg"},{"id":2,"email":"janet.weaver@reqres.in","first_name":"Janet","last_name":"Weaver","avatar":"https://reqres.in/img/faces/2-image.jpg"},{"id":3,"email":"emma.wong@reqres.in","first_name":"Emma","last_name":"Wong","avatar":"https://reqres.in/img/faces/3-image.jpg"},{"id":4,"email":"eve.holt@reqres.in","first_name":"Eve","last_name":"Holt","avatar":"https://reqres.in/img/faces/4-image.jpg"},{"id":5,"email":"charles.morris@reqres.in","first_name":"Charles","last_name":"Morris","avatar":"https://reqres.in/img/faces/5-image.jpg"},{"id":6,"email":"tracey.ramos@reqres.in","first_name":"Tracey","last_name":"Ramos","avatar":"https://reqres.in/img/faces/6-image.jpg"}],"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}} 
+ </msg>
+<msg timestamp="20230721 15:50:28.003" level="INFO">${Response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230721 15:50:27.894" endtime="20230721 15:50:28.003"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${status_code}</var>
+<arg>${Response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20230721 15:50:28.004" level="INFO">${status_code} = 200</msg>
+<status status="PASS" starttime="20230721 15:50:28.003" endtime="20230721 15:50:28.004"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${status_code}</arg>
+<arg>200</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230721 15:50:28.004" endtime="20230721 15:50:28.004"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${content}</var>
+<arg>${Response.content}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20230721 15:50:28.005" level="INFO">${content} = {"page":1,"per_page":6,"total":12,"total_pages":2,"data":[{"id":1,"email":"george.bluth@reqres.in","first_name":"George","last_name":"Bluth","avatar":"https://reqres.in/img/faces/1-image.jpg"},{"id":2...</msg>
+<status status="PASS" starttime="20230721 15:50:28.004" endtime="20230721 15:50:28.005"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${Response.content}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230721 15:50:28.006" level="INFO">{"page":1,"per_page":6,"total":12,"total_pages":2,"data":[{"id":1,"email":"george.bluth@reqres.in","first_name":"George","last_name":"Bluth","avatar":"https://reqres.in/img/faces/1-image.jpg"},{"id":2,"email":"janet.weaver@reqres.in","first_name":"Janet","last_name":"Weaver","avatar":"https://reqres.in/img/faces/2-image.jpg"},{"id":3,"email":"emma.wong@reqres.in","first_name":"Emma","last_name":"Wong","avatar":"https://reqres.in/img/faces/3-image.jpg"},{"id":4,"email":"eve.holt@reqres.in","first_name":"Eve","last_name":"Holt","avatar":"https://reqres.in/img/faces/4-image.jpg"},{"id":5,"email":"charles.morris@reqres.in","first_name":"Charles","last_name":"Morris","avatar":"https://reqres.in/img/faces/5-image.jpg"},{"id":6,"email":"tracey.ramos@reqres.in","first_name":"Tracey","last_name":"Ramos","avatar":"https://reqres.in/img/faces/6-image.jpg"}],"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}}</msg>
+<status status="PASS" starttime="20230721 15:50:28.005" endtime="20230721 15:50:28.006"/>
+</kw>
+<kw name="Convert String To Json" library="JSONLibrary">
+<var>${jsondata}</var>
+<arg>${response.content}</arg>
+<doc>Convert String to JSON object</doc>
+<msg timestamp="20230721 15:50:28.007" level="INFO">${jsondata} = {'page': 1, 'per_page': 6, 'total': 12, 'total_pages': 2, 'data': [{'id': 1, 'email': 'george.bluth@reqres.in', 'first_name': 'George', 'last_name': 'Bluth', 'avatar': 'https://reqres.in/img/faces/1-i...</msg>
+<status status="PASS" starttime="20230721 15:50:28.006" endtime="20230721 15:50:28.007"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${page}</var>
+<arg>${jsondata}[page]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230721 15:50:28.007" level="INFO">${page} = 1</msg>
+<status status="PASS" starttime="20230721 15:50:28.007" endtime="20230721 15:50:28.007"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${per_page}</var>
+<arg>${jsondata}[per_page]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230721 15:50:28.007" level="INFO">${per_page} = 6</msg>
+<status status="PASS" starttime="20230721 15:50:28.007" endtime="20230721 15:50:28.007"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${total}</var>
+<arg>${jsondata}[total]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230721 15:50:28.007" level="INFO">${total} = 12</msg>
+<status status="PASS" starttime="20230721 15:50:28.007" endtime="20230721 15:50:28.007"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${total_pages}</var>
+<arg>${jsondata}[total_pages]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230721 15:50:28.007" level="INFO">${total_pages} = 2</msg>
+<status status="PASS" starttime="20230721 15:50:28.007" endtime="20230721 15:50:28.007"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${data}</var>
+<arg>${jsondata}[data]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230721 15:50:28.008" level="INFO">${data} = [{'id': 1, 'email': 'george.bluth@reqres.in', 'first_name': 'George', 'last_name': 'Bluth', 'avatar': 'https://reqres.in/img/faces/1-image.jpg'}, {'id': 2, 'email': 'janet.weaver@reqres.in', 'first_na...</msg>
+<status status="PASS" starttime="20230721 15:50:28.007" endtime="20230721 15:50:28.008"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${data_id}</var>
+<arg>${jsondata}[data][0][id]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230721 15:50:28.008" level="INFO">${data_id} = 1</msg>
+<status status="PASS" starttime="20230721 15:50:28.008" endtime="20230721 15:50:28.008"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${data_email}</var>
+<arg>${jsondata}[data][0][email]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230721 15:50:28.008" level="INFO">${data_email} = george.bluth@reqres.in</msg>
+<status status="PASS" starttime="20230721 15:50:28.008" endtime="20230721 15:50:28.008"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${data_first_name}</var>
+<arg>${jsondata}[data][0][first_name]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230721 15:50:28.008" level="INFO">${data_first_name} = George</msg>
+<status status="PASS" starttime="20230721 15:50:28.008" endtime="20230721 15:50:28.008"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${data_last_name}</var>
+<arg>${jsondata}[data][0][last_name]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230721 15:50:28.008" level="INFO">${data_last_name} = Bluth</msg>
+<status status="PASS" starttime="20230721 15:50:28.008" endtime="20230721 15:50:28.008"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${data_avatar}</var>
+<arg>${jsondata}[data][0][avatar]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230721 15:50:28.009" level="INFO">${data_avatar} = https://reqres.in/img/faces/1-image.jpg</msg>
+<status status="PASS" starttime="20230721 15:50:28.008" endtime="20230721 15:50:28.009"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${support}</var>
+<arg>${jsondata}[support]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230721 15:50:28.009" level="INFO">${support} = {'url': 'https://reqres.in/#support-heading', 'text': 'To keep ReqRes free, contributions towards server costs are appreciated!'}</msg>
+<status status="PASS" starttime="20230721 15:50:28.009" endtime="20230721 15:50:28.009"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${support_url}</var>
+<arg>${jsondata}[support][url]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230721 15:50:28.009" level="INFO">${support_url} = https://reqres.in/#support-heading</msg>
+<status status="PASS" starttime="20230721 15:50:28.009" endtime="20230721 15:50:28.009"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${support_text}</var>
+<arg>${jsondata}[support][text]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230721 15:50:28.009" level="INFO">${support_text} = To keep ReqRes free, contributions towards server costs are appreciated!</msg>
+<status status="PASS" starttime="20230721 15:50:28.009" endtime="20230721 15:50:28.009"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${page}</var>
+<arg>isinstance($page, int)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230721 15:50:28.009" level="INFO">${page} = True</msg>
+<status status="PASS" starttime="20230721 15:50:28.009" endtime="20230721 15:50:28.009"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${page}==True</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20230721 15:50:28.009" endtime="20230721 15:50:28.011"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${per_page}</var>
+<arg>isinstance($per_page, int)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230721 15:50:28.011" level="INFO">${per_page} = True</msg>
+<status status="PASS" starttime="20230721 15:50:28.011" endtime="20230721 15:50:28.011"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${per_page}==True</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20230721 15:50:28.011" endtime="20230721 15:50:28.011"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${total}</var>
+<arg>isinstance($total, int)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230721 15:50:28.011" level="INFO">${total} = True</msg>
+<status status="PASS" starttime="20230721 15:50:28.011" endtime="20230721 15:50:28.011"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${total}==True</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20230721 15:50:28.011" endtime="20230721 15:50:28.012"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${total_pages}</var>
+<arg>isinstance($total_pages, int)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230721 15:50:28.012" level="INFO">${total_pages} = True</msg>
+<status status="PASS" starttime="20230721 15:50:28.012" endtime="20230721 15:50:28.012"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${total_pages}==True</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20230721 15:50:28.012" endtime="20230721 15:50:28.012"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${result}</var>
+<arg>isinstance($data, list)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230721 15:50:28.012" level="INFO">${result} = True</msg>
+<status status="PASS" starttime="20230721 15:50:28.012" endtime="20230721 15:50:28.012"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${result}==True</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20230721 15:50:28.012" endtime="20230721 15:50:28.012"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${result}</var>
+<arg>isinstance($data_id, int)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230721 15:50:28.013" level="INFO">${result} = True</msg>
+<status status="PASS" starttime="20230721 15:50:28.013" endtime="20230721 15:50:28.013"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${result}==True</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20230721 15:50:28.013" endtime="20230721 15:50:28.013"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${result}</var>
+<arg>isinstance($data_email, str)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230721 15:50:28.013" level="INFO">${result} = True</msg>
+<status status="PASS" starttime="20230721 15:50:28.013" endtime="20230721 15:50:28.013"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${result}==True</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20230721 15:50:28.013" endtime="20230721 15:50:28.013"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${result}</var>
+<arg>isinstance($data_first_name, str)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230721 15:50:28.014" level="INFO">${result} = True</msg>
+<status status="PASS" starttime="20230721 15:50:28.013" endtime="20230721 15:50:28.014"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${result}==True</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20230721 15:50:28.014" endtime="20230721 15:50:28.014"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${result}</var>
+<arg>isinstance($data_last_name, str)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230721 15:50:28.014" level="INFO">${result} = True</msg>
+<status status="PASS" starttime="20230721 15:50:28.014" endtime="20230721 15:50:28.014"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${result}==True</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20230721 15:50:28.014" endtime="20230721 15:50:28.014"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${result}</var>
+<arg>isinstance($data_avatar, str)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230721 15:50:28.014" level="INFO">${result} = True</msg>
+<status status="PASS" starttime="20230721 15:50:28.014" endtime="20230721 15:50:28.014"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>result = ${result}, expected str</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230721 15:50:28.015" level="INFO">result = True, expected str</msg>
+<status status="PASS" starttime="20230721 15:50:28.014" endtime="20230721 15:50:28.015"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${result}==True</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20230721 15:50:28.015" endtime="20230721 15:50:28.015"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${result}</var>
+<arg>isinstance($support, dict)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230721 15:50:28.015" level="INFO">${result} = True</msg>
+<status status="PASS" starttime="20230721 15:50:28.015" endtime="20230721 15:50:28.015"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${result}==True</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20230721 15:50:28.015" endtime="20230721 15:50:28.015"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${result}</var>
+<arg>isinstance($support_url, str)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230721 15:50:28.015" level="INFO">${result} = True</msg>
+<status status="PASS" starttime="20230721 15:50:28.015" endtime="20230721 15:50:28.016"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${result}==True</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20230721 15:50:28.016" endtime="20230721 15:50:28.016"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${result}</var>
+<arg>isinstance($support_text, str)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230721 15:50:28.016" level="INFO">${result} = True</msg>
+<status status="PASS" starttime="20230721 15:50:28.016" endtime="20230721 15:50:28.016"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${result}==True</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20230721 15:50:28.016" endtime="20230721 15:50:28.016"/>
+</kw>
+<status status="PASS" starttime="20230721 15:50:27.894" endtime="20230721 15:50:28.016"/>
+</kw>
+<status status="PASS" starttime="20230721 15:50:27.893" endtime="20230721 15:50:28.017"/>
+</test>
+<doc>Positive Testcase - Get List User all with check type data and response</doc>
+<status status="PASS" starttime="20230721 15:50:27.883" endtime="20230721 15:50:28.017"/>
+</suite>
+<suite id="s1-s5" name="GET-TCP002-User" source="D:\Testing-Interview\Bhumi Varta\AUTOMATION-API\testcase\GET-TCP002-User.robot">
+<test id="s1-s5-t1" name="TCP-002 Get list user with Param Page" line="13">
+<kw name="Verify Param Page is match">
+<tag>GET</tag>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>listuser</arg>
+<arg>${base_url}</arg>
+<arg>verify=True</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230721 15:50:28.032" level="INFO">Creating Session using : alias=listuser, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<status status="PASS" starttime="20230721 15:50:28.031" endtime="20230721 15:50:28.032"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${param}</var>
+<arg>page=${page_param}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230721 15:50:28.032" level="INFO">${param} = {'page': '2'}</msg>
+<status status="PASS" starttime="20230721 15:50:28.032" endtime="20230721 15:50:28.032"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${Response}</var>
+<arg>listuser</arg>
+<arg>/api/users</arg>
+<arg>params=${param}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20230721 15:50:28.140" level="INFO">GET Request : url=https://reqres.in/api/users?page=2 
+ path_url=/api/users?page=2 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20230721 15:50:28.140" level="INFO">GET Response : url=https://reqres.in/api/users?page=2 
+ status=200, reason=OK 
+ headers={'Date': 'Fri, 21 Jul 2023 08:50:29 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"406-ut0vzoCuidvyMf8arZpMpJ6ZRDw"', 'Via': '1.1 vegur', 'Cache-Control': 'max-age=14400', 'CF-Cache-Status': 'HIT', 'Age': '661', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=Q9jGhnpT1NLW%2FuywGTwzpbsb46WDPgIldtRLt2GMJnvwf%2BqYe0y2eTyghFkHTFE3YkYVl%2FxZtgTz%2FIm4btOFq0lSuRs5x5afDuKDUX8RtQlSk%2B92S%2BJGgbdB5g%3D%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '7ea232589d5840eb-SIN', 'Content-Encoding': 'gzip'} 
+ body={"page":2,"per_page":6,"total":12,"total_pages":2,"data":[{"id":7,"email":"michael.lawson@reqres.in","first_name":"Michael","last_name":"Lawson","avatar":"https://reqres.in/img/faces/7-image.jpg"},{"id":8,"email":"lindsay.ferguson@reqres.in","first_name":"Lindsay","last_name":"Ferguson","avatar":"https://reqres.in/img/faces/8-image.jpg"},{"id":9,"email":"tobias.funke@reqres.in","first_name":"Tobias","last_name":"Funke","avatar":"https://reqres.in/img/faces/9-image.jpg"},{"id":10,"email":"byron.fields@reqres.in","first_name":"Byron","last_name":"Fields","avatar":"https://reqres.in/img/faces/10-image.jpg"},{"id":11,"email":"george.edwards@reqres.in","first_name":"George","last_name":"Edwards","avatar":"https://reqres.in/img/faces/11-image.jpg"},{"id":12,"email":"rachel.howell@reqres.in","first_name":"Rachel","last_name":"Howell","avatar":"https://reqres.in/img/faces/12-image.jpg"}],"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}} 
+ </msg>
+<msg timestamp="20230721 15:50:28.140" level="INFO">${Response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230721 15:50:28.034" endtime="20230721 15:50:28.140"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${content}</var>
+<arg>${Response.content}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20230721 15:50:28.141" level="INFO">${content} = {"page":2,"per_page":6,"total":12,"total_pages":2,"data":[{"id":7,"email":"michael.lawson@reqres.in","first_name":"Michael","last_name":"Lawson","avatar":"https://reqres.in/img/faces/7-image.jpg"},{"i...</msg>
+<status status="PASS" starttime="20230721 15:50:28.140" endtime="20230721 15:50:28.141"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${Response.content}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230721 15:50:28.141" level="INFO">{"page":2,"per_page":6,"total":12,"total_pages":2,"data":[{"id":7,"email":"michael.lawson@reqres.in","first_name":"Michael","last_name":"Lawson","avatar":"https://reqres.in/img/faces/7-image.jpg"},{"id":8,"email":"lindsay.ferguson@reqres.in","first_name":"Lindsay","last_name":"Ferguson","avatar":"https://reqres.in/img/faces/8-image.jpg"},{"id":9,"email":"tobias.funke@reqres.in","first_name":"Tobias","last_name":"Funke","avatar":"https://reqres.in/img/faces/9-image.jpg"},{"id":10,"email":"byron.fields@reqres.in","first_name":"Byron","last_name":"Fields","avatar":"https://reqres.in/img/faces/10-image.jpg"},{"id":11,"email":"george.edwards@reqres.in","first_name":"George","last_name":"Edwards","avatar":"https://reqres.in/img/faces/11-image.jpg"},{"id":12,"email":"rachel.howell@reqres.in","first_name":"Rachel","last_name":"Howell","avatar":"https://reqres.in/img/faces/12-image.jpg"}],"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}}</msg>
+<status status="PASS" starttime="20230721 15:50:28.141" endtime="20230721 15:50:28.141"/>
+</kw>
+<kw name="Convert String To Json" library="JSONLibrary">
+<var>${jsondata}</var>
+<arg>${response.content}</arg>
+<doc>Convert String to JSON object</doc>
+<msg timestamp="20230721 15:50:28.142" level="INFO">${jsondata} = {'page': 2, 'per_page': 6, 'total': 12, 'total_pages': 2, 'data': [{'id': 7, 'email': 'michael.lawson@reqres.in', 'first_name': 'Michael', 'last_name': 'Lawson', 'avatar': 'https://reqres.in/img/faces...</msg>
+<status status="PASS" starttime="20230721 15:50:28.141" endtime="20230721 15:50:28.142"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${page}</var>
+<arg>${jsondata}[page]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230721 15:50:28.142" level="INFO">${page} = 2</msg>
+<status status="PASS" starttime="20230721 15:50:28.142" endtime="20230721 15:50:28.142"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${page}</arg>
+<arg>${page_param}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20230721 15:50:28.142" endtime="20230721 15:50:28.142"/>
+</kw>
+<status status="PASS" starttime="20230721 15:50:28.031" endtime="20230721 15:50:28.142"/>
+</kw>
+<status status="PASS" starttime="20230721 15:50:28.029" endtime="20230721 15:50:28.142"/>
+</test>
+<doc>Positive Testcase - Get List User with Param Page is match</doc>
+<status status="PASS" starttime="20230721 15:50:28.018" endtime="20230721 15:50:28.143"/>
+</suite>
+<suite id="s1-s6" name="GET-TCP003-User" source="D:\Testing-Interview\Bhumi Varta\AUTOMATION-API\testcase\GET-TCP003-User.robot">
+<test id="s1-s6-t1" name="TCP-003 Get list user with Param ID and verify response body" line="18">
+<kw name="Verify Param Page is match">
+<tag>GET</tag>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>listuser</arg>
+<arg>${base_url}</arg>
+<arg>verify=True</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230721 15:50:28.151" level="INFO">Creating Session using : alias=listuser, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<status status="PASS" starttime="20230721 15:50:28.151" endtime="20230721 15:50:28.151"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${param}</var>
+<arg>id=${ID_param}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230721 15:50:28.152" level="INFO">${param} = {'id': '9'}</msg>
+<status status="PASS" starttime="20230721 15:50:28.151" endtime="20230721 15:50:28.152"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${Response}</var>
+<arg>listuser</arg>
+<arg>/api/users</arg>
+<arg>params=${param}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20230721 15:50:28.251" level="INFO">GET Request : url=https://reqres.in/api/users?id=9 
+ path_url=/api/users?id=9 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20230721 15:50:28.251" level="INFO">GET Response : url=https://reqres.in/api/users?id=9 
+ status=200, reason=OK 
+ headers={'Date': 'Fri, 21 Jul 2023 08:50:29 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"118-h4/j+GWuEpfnmJgxhE5HWX+/QC8"', 'Via': '1.1 vegur', 'Cache-Control': 'max-age=14400', 'CF-Cache-Status': 'HIT', 'Age': '6579', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=mhF7MiILX%2Fum0msaANJYpDHwrRUhMNTNb7CXGmW8MrRKpuuiWsgUrF9NfJEGWn1VYi8d4qZya%2FT5HqzclIbVeiIngoV0uD%2BXa7jlJndCJwo4CPCu9gTV7Xrntw%3D%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '7ea232594e124a59-SIN', 'Content-Encoding': 'gzip'} 
+ body={"data":{"id":9,"email":"tobias.funke@reqres.in","first_name":"Tobias","last_name":"Funke","avatar":"https://reqres.in/img/faces/9-image.jpg"},"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}} 
+ </msg>
+<msg timestamp="20230721 15:50:28.251" level="INFO">${Response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230721 15:50:28.152" endtime="20230721 15:50:28.251"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${content}</var>
+<arg>${Response.content}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20230721 15:50:28.252" level="INFO">${content} = {"data":{"id":9,"email":"tobias.funke@reqres.in","first_name":"Tobias","last_name":"Funke","avatar":"https://reqres.in/img/faces/9-image.jpg"},"support":{"url":"https://reqres.in/#support-heading","te...</msg>
+<status status="PASS" starttime="20230721 15:50:28.252" endtime="20230721 15:50:28.252"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${Response.content}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230721 15:50:28.253" level="INFO">{"data":{"id":9,"email":"tobias.funke@reqres.in","first_name":"Tobias","last_name":"Funke","avatar":"https://reqres.in/img/faces/9-image.jpg"},"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}}</msg>
+<status status="PASS" starttime="20230721 15:50:28.252" endtime="20230721 15:50:28.253"/>
+</kw>
+<kw name="Convert String To Json" library="JSONLibrary">
+<var>${jsondata}</var>
+<arg>${response.content}</arg>
+<doc>Convert String to JSON object</doc>
+<msg timestamp="20230721 15:50:28.253" level="INFO">${jsondata} = {'data': {'id': 9, 'email': 'tobias.funke@reqres.in', 'first_name': 'Tobias', 'last_name': 'Funke', 'avatar': 'https://reqres.in/img/faces/9-image.jpg'}, 'support': {'url': 'https://reqres.in/#support...</msg>
+<status status="PASS" starttime="20230721 15:50:28.253" endtime="20230721 15:50:28.253"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${data}</var>
+<arg>${jsondata}[data]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230721 15:50:28.253" level="INFO">${data} = {'id': 9, 'email': 'tobias.funke@reqres.in', 'first_name': 'Tobias', 'last_name': 'Funke', 'avatar': 'https://reqres.in/img/faces/9-image.jpg'}</msg>
+<status status="PASS" starttime="20230721 15:50:28.253" endtime="20230721 15:50:28.253"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${data_id}</var>
+<arg>${jsondata}[data][id]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230721 15:50:28.253" level="INFO">${data_id} = 9</msg>
+<status status="PASS" starttime="20230721 15:50:28.253" endtime="20230721 15:50:28.253"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${data_email}</var>
+<arg>${jsondata}[data][email]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230721 15:50:28.254" level="INFO">${data_email} = tobias.funke@reqres.in</msg>
+<status status="PASS" starttime="20230721 15:50:28.254" endtime="20230721 15:50:28.254"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${data_first_name}</var>
+<arg>${jsondata}[data][first_name]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230721 15:50:28.254" level="INFO">${data_first_name} = Tobias</msg>
+<status status="PASS" starttime="20230721 15:50:28.254" endtime="20230721 15:50:28.254"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${data_last_name}</var>
+<arg>${jsondata}[data][last_name]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230721 15:50:28.254" level="INFO">${data_last_name} = Funke</msg>
+<status status="PASS" starttime="20230721 15:50:28.254" endtime="20230721 15:50:28.254"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${data_avatar}</var>
+<arg>${jsondata}[data][avatar]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230721 15:50:28.254" level="INFO">${data_avatar} = https://reqres.in/img/faces/9-image.jpg</msg>
+<status status="PASS" starttime="20230721 15:50:28.254" endtime="20230721 15:50:28.254"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${data_id}</arg>
+<arg>${ID_param}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20230721 15:50:28.254" endtime="20230721 15:50:28.254"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${data_email}</arg>
+<arg>${result_email}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230721 15:50:28.254" endtime="20230721 15:50:28.255"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${data_first_name}</arg>
+<arg>${result_fistname}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230721 15:50:28.255" endtime="20230721 15:50:28.255"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${data_last_name}</arg>
+<arg>${result_last_name}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230721 15:50:28.255" endtime="20230721 15:50:28.255"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${data_avatar}</arg>
+<arg>${result_avatar}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230721 15:50:28.255" endtime="20230721 15:50:28.255"/>
+</kw>
+<status status="PASS" starttime="20230721 15:50:28.150" endtime="20230721 15:50:28.255"/>
+</kw>
+<status status="PASS" starttime="20230721 15:50:28.150" endtime="20230721 15:50:28.255"/>
+</test>
+<doc>Positive Testcase - Get List User with Param ID is match</doc>
+<status status="PASS" starttime="20230721 15:50:28.144" endtime="20230721 15:50:28.256"/>
+</suite>
+<suite id="s1-s7" name="POST-TCN001-User" source="D:\Testing-Interview\Bhumi Varta\AUTOMATION-API\testcase\POST-TCN001-User.robot">
+<test id="s1-s7-t1" name="TCN-001 Create data user Empty Name" line="12">
+<kw name="Validate Status Code and Response Body">
+<tag>DELETE</tag>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>listuser</arg>
+<arg>${base_url}</arg>
+<arg>verify=True</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230721 15:50:28.265" level="INFO">Creating Session using : alias=listuser, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<status status="PASS" starttime="20230721 15:50:28.265" endtime="20230721 15:50:28.265"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${body}</var>
+<arg>name=${EMPTY}</arg>
+<arg>job=${job_payload}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230721 15:50:28.266" level="INFO">${body} = {'name': '', 'job': 'Testing'}</msg>
+<status status="PASS" starttime="20230721 15:50:28.265" endtime="20230721 15:50:28.266"/>
+</kw>
+<kw name="POST On Session" library="RequestsLibrary">
+<var>${Response}</var>
+<arg>listuser</arg>
+<arg>/api/users</arg>
+<arg>json=${body}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20230721 15:50:28.725" level="INFO">POST Request : url=https://reqres.in/api/users 
+ path_url=/api/users 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '30', 'Content-Type': 'application/json'} 
+ body=b'{"name": "", "job": "Testing"}' 
+ </msg>
+<msg timestamp="20230721 15:50:28.725" level="INFO">POST Response : url=https://reqres.in/api/users 
+ status=201, reason=Created 
+ headers={'Date': 'Fri, 21 Jul 2023 08:50:30 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '76', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"4c-iWwlJQkfYKKbZEmX/1cE7M9sV2I"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=KvARYTsw9zh7tZJF2ZRpfTO%2BAtNhaiLbuZnL5oBVb8oF52z7tHG4O3M3DO7AkTtVX5MtDx0W0rd2UHk4cayowidFs4tTDuCPUG1sQ1G83r%2FMLGSCff80%2F4cRPA%3D%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '7ea2325a0beea135-SIN'} 
+ body={"name":"","job":"Testing","id":"78","createdAt":"2023-07-21T08:50:30.349Z"} 
+ </msg>
+<msg timestamp="20230721 15:50:28.725" level="INFO">${Response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20230721 15:50:28.266" endtime="20230721 15:50:28.725"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${Response.status_code}</arg>
+<arg>201</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20230721 15:50:28.726" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20230721 15:50:28.725" endtime="20230721 15:50:28.726"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${Response.reason}</arg>
+<arg>Created</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20230721 15:50:28.726" endtime="20230721 15:50:28.726"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${content}</var>
+<arg>${Response.content}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20230721 15:50:28.727" level="INFO">${content} = {"name":"","job":"Testing","id":"78","createdAt":"2023-07-21T08:50:30.349Z"}</msg>
+<status status="PASS" starttime="20230721 15:50:28.726" endtime="20230721 15:50:28.727"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${Response.content}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230721 15:50:28.727" level="INFO">{"name":"","job":"Testing","id":"78","createdAt":"2023-07-21T08:50:30.349Z"}</msg>
+<status status="PASS" starttime="20230721 15:50:28.727" endtime="20230721 15:50:28.727"/>
+</kw>
+<kw name="Convert String To Json" library="JSONLibrary">
+<var>${jsondata}</var>
+<arg>${response.content}</arg>
+<doc>Convert String to JSON object</doc>
+<msg timestamp="20230721 15:50:28.728" level="INFO">${jsondata} = {'name': '', 'job': 'Testing', 'id': '78', 'createdAt': '2023-07-21T08:50:30.349Z'}</msg>
+<status status="PASS" starttime="20230721 15:50:28.727" endtime="20230721 15:50:28.728"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${name}</var>
+<arg>${jsondata}[name]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230721 15:50:28.728" level="INFO">${name} = </msg>
+<status status="PASS" starttime="20230721 15:50:28.728" endtime="20230721 15:50:28.728"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${job}</var>
+<arg>${jsondata}[job]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230721 15:50:28.728" level="INFO">${job} = Testing</msg>
+<status status="PASS" starttime="20230721 15:50:28.728" endtime="20230721 15:50:28.728"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${id}</var>
+<arg>${jsondata}[id]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230721 15:50:28.728" level="INFO">${id} = 78</msg>
+<status status="PASS" starttime="20230721 15:50:28.728" endtime="20230721 15:50:28.728"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${createdAt}</var>
+<arg>${jsondata}[createdAt]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230721 15:50:28.728" level="INFO">${createdAt} = 2023-07-21T08:50:30.349Z</msg>
+<status status="PASS" starttime="20230721 15:50:28.728" endtime="20230721 15:50:28.728"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${name}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230721 15:50:28.729" level="INFO"/>
+<status status="PASS" starttime="20230721 15:50:28.729" endtime="20230721 15:50:28.729"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${job}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230721 15:50:28.729" level="INFO">Testing</msg>
+<status status="PASS" starttime="20230721 15:50:28.729" endtime="20230721 15:50:28.729"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${name}</arg>
+<arg>${EMPTY}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20230721 15:50:28.729" endtime="20230721 15:50:28.729"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${job}</arg>
+<arg>${job_payload}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20230721 15:50:28.729" endtime="20230721 15:50:28.730"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${name}</var>
+<arg>isinstance($name, str)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230721 15:50:28.730" level="INFO">${name} = True</msg>
+<status status="PASS" starttime="20230721 15:50:28.730" endtime="20230721 15:50:28.730"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${name}==True</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20230721 15:50:28.730" endtime="20230721 15:50:28.730"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${job}</var>
+<arg>isinstance($job, str)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230721 15:50:28.730" level="INFO">${job} = True</msg>
+<status status="PASS" starttime="20230721 15:50:28.730" endtime="20230721 15:50:28.730"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${job}==True</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20230721 15:50:28.730" endtime="20230721 15:50:28.731"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${id}</var>
+<arg>isinstance($id, str)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230721 15:50:28.731" level="INFO">${id} = True</msg>
+<status status="PASS" starttime="20230721 15:50:28.731" endtime="20230721 15:50:28.731"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${id}==True</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20230721 15:50:28.731" endtime="20230721 15:50:28.731"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${createdAt}</var>
+<arg>isinstance($createdAt, str)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230721 15:50:28.731" level="INFO">${createdAt} = True</msg>
+<status status="PASS" starttime="20230721 15:50:28.731" endtime="20230721 15:50:28.731"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${createdAt}==True</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20230721 15:50:28.731" endtime="20230721 15:50:28.732"/>
+</kw>
+<status status="PASS" starttime="20230721 15:50:28.264" endtime="20230721 15:50:28.732"/>
+</kw>
+<status status="PASS" starttime="20230721 15:50:28.264" endtime="20230721 15:50:28.732"/>
+</test>
+<doc>Negative Testcase - Create User Empty Name</doc>
+<status status="PASS" starttime="20230721 15:50:28.257" endtime="20230721 15:50:28.733"/>
+</suite>
+<suite id="s1-s8" name="POST-TCN002-User" source="D:\Testing-Interview\Bhumi Varta\AUTOMATION-API\testcase\POST-TCN002-User.robot">
+<test id="s1-s8-t1" name="TCN-002 Create data user Empty Job" line="12">
+<kw name="Validate Status Code and Response Body">
+<tag>POST</tag>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>listuser</arg>
+<arg>${base_url}</arg>
+<arg>verify=True</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230721 15:50:28.745" level="INFO">Creating Session using : alias=listuser, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<status status="PASS" starttime="20230721 15:50:28.745" endtime="20230721 15:50:28.746"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${body}</var>
+<arg>name=${name_payload}</arg>
+<arg>job=${EMPTY}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230721 15:50:28.747" level="INFO">${body} = {'name': 'nama testing', 'job': ''}</msg>
+<status status="PASS" starttime="20230721 15:50:28.746" endtime="20230721 15:50:28.747"/>
+</kw>
+<kw name="POST On Session" library="RequestsLibrary">
+<var>${Response}</var>
+<arg>listuser</arg>
+<arg>/api/users</arg>
+<arg>json=${body}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20230721 15:50:29.190" level="INFO">POST Request : url=https://reqres.in/api/users 
+ path_url=/api/users 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '35', 'Content-Type': 'application/json'} 
+ body=b'{"name": "nama testing", "job": ""}' 
+ </msg>
+<msg timestamp="20230721 15:50:29.190" level="INFO">POST Response : url=https://reqres.in/api/users 
+ status=201, reason=Created 
+ headers={'Date': 'Fri, 21 Jul 2023 08:50:30 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '82', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"52-a8VmIIuWEYGmRIFqmFGCL2YboW0"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=shedfCaqpaYGG2vjZlqloDvmrT%2BmUB1dk1DNYunUAFRd9Iv7iw1MFzcdcaAPnZsPK0otJN4avd1JLX1Bsk3AWnokifCWBCWXO2gj8OhmEPqCenU9JyW2AGZEgg%3D%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '7ea2325d0ede4c7d-SIN'} 
+ body={"name":"nama testing","job":"","id":"754","createdAt":"2023-07-21T08:50:30.822Z"} 
+ </msg>
+<msg timestamp="20230721 15:50:29.190" level="INFO">${Response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20230721 15:50:28.747" endtime="20230721 15:50:29.190"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${Response.status_code}</arg>
+<arg>201</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20230721 15:50:29.190" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20230721 15:50:29.190" endtime="20230721 15:50:29.190"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${Response.reason}</arg>
+<arg>Created</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20230721 15:50:29.190" endtime="20230721 15:50:29.192"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${content}</var>
+<arg>${Response.content}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20230721 15:50:29.192" level="INFO">${content} = {"name":"nama testing","job":"","id":"754","createdAt":"2023-07-21T08:50:30.822Z"}</msg>
+<status status="PASS" starttime="20230721 15:50:29.192" endtime="20230721 15:50:29.192"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${Response.content}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230721 15:50:29.192" level="INFO">{"name":"nama testing","job":"","id":"754","createdAt":"2023-07-21T08:50:30.822Z"}</msg>
+<status status="PASS" starttime="20230721 15:50:29.192" endtime="20230721 15:50:29.192"/>
+</kw>
+<kw name="Convert String To Json" library="JSONLibrary">
+<var>${jsondata}</var>
+<arg>${response.content}</arg>
+<doc>Convert String to JSON object</doc>
+<msg timestamp="20230721 15:50:29.193" level="INFO">${jsondata} = {'name': 'nama testing', 'job': '', 'id': '754', 'createdAt': '2023-07-21T08:50:30.822Z'}</msg>
+<status status="PASS" starttime="20230721 15:50:29.193" endtime="20230721 15:50:29.193"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${name}</var>
+<arg>${jsondata}[name]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230721 15:50:29.193" level="INFO">${name} = nama testing</msg>
+<status status="PASS" starttime="20230721 15:50:29.193" endtime="20230721 15:50:29.193"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${job}</var>
+<arg>${jsondata}[job]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230721 15:50:29.193" level="INFO">${job} = </msg>
+<status status="PASS" starttime="20230721 15:50:29.193" endtime="20230721 15:50:29.193"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${id}</var>
+<arg>${jsondata}[id]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230721 15:50:29.193" level="INFO">${id} = 754</msg>
+<status status="PASS" starttime="20230721 15:50:29.193" endtime="20230721 15:50:29.193"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${createdAt}</var>
+<arg>${jsondata}[createdAt]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230721 15:50:29.194" level="INFO">${createdAt} = 2023-07-21T08:50:30.822Z</msg>
+<status status="PASS" starttime="20230721 15:50:29.193" endtime="20230721 15:50:29.194"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${name}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230721 15:50:29.194" level="INFO">nama testing</msg>
+<status status="PASS" starttime="20230721 15:50:29.194" endtime="20230721 15:50:29.194"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${job}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230721 15:50:29.194" level="INFO"/>
+<status status="PASS" starttime="20230721 15:50:29.194" endtime="20230721 15:50:29.194"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${name}</arg>
+<arg>${name_payload}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20230721 15:50:29.194" endtime="20230721 15:50:29.194"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${job}</arg>
+<arg>${EMPTY}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20230721 15:50:29.194" endtime="20230721 15:50:29.195"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${name}</var>
+<arg>isinstance($name, str)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230721 15:50:29.195" level="INFO">${name} = True</msg>
+<status status="PASS" starttime="20230721 15:50:29.195" endtime="20230721 15:50:29.195"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${name}==True</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20230721 15:50:29.195" endtime="20230721 15:50:29.195"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${job}</var>
+<arg>isinstance($job, str)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230721 15:50:29.195" level="INFO">${job} = True</msg>
+<status status="PASS" starttime="20230721 15:50:29.195" endtime="20230721 15:50:29.195"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${job}==True</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20230721 15:50:29.195" endtime="20230721 15:50:29.196"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${id}</var>
+<arg>isinstance($id, str)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230721 15:50:29.196" level="INFO">${id} = True</msg>
+<status status="PASS" starttime="20230721 15:50:29.196" endtime="20230721 15:50:29.196"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${id}==True</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20230721 15:50:29.196" endtime="20230721 15:50:29.196"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${createdAt}</var>
+<arg>isinstance($createdAt, str)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230721 15:50:29.196" level="INFO">${createdAt} = True</msg>
+<status status="PASS" starttime="20230721 15:50:29.196" endtime="20230721 15:50:29.196"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${createdAt}==True</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20230721 15:50:29.196" endtime="20230721 15:50:29.196"/>
+</kw>
+<status status="PASS" starttime="20230721 15:50:28.744" endtime="20230721 15:50:29.197"/>
+</kw>
+<status status="PASS" starttime="20230721 15:50:28.743" endtime="20230721 15:50:29.197"/>
+</test>
+<doc>Negative Testcase - Create User Empty Job</doc>
+<status status="PASS" starttime="20230721 15:50:28.734" endtime="20230721 15:50:29.198"/>
+</suite>
+<suite id="s1-s9" name="POST-TCN003-User" source="D:\Testing-Interview\Bhumi Varta\AUTOMATION-API\testcase\POST-TCN003-User.robot">
+<test id="s1-s9-t1" name="TCN-003 Create data user Without Token" line="14">
+<kw name="Validate Status Code and Response Body">
+<tag>POST</tag>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>listuser</arg>
+<arg>${base_url}</arg>
+<arg>verify=True</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230721 15:50:29.209" level="INFO">Creating Session using : alias=listuser, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<status status="PASS" starttime="20230721 15:50:29.209" endtime="20230721 15:50:29.209"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${header}</var>
+<arg>Content-Type=application/json</arg>
+<arg>X-API-Auth=${EMPTY}</arg>
+<arg>Authorization=${token}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230721 15:50:29.210" level="INFO">${header} = {'Content-Type': 'application/json', 'X-API-Auth': '', 'Authorization': 'gubu8746387dggdwgewucs8ayef887b6x3276276x'}</msg>
+<status status="PASS" starttime="20230721 15:50:29.210" endtime="20230721 15:50:29.210"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Bearer}</var>
+<arg>Bearer</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230721 15:50:29.211" level="INFO">${Bearer} = Bearer</msg>
+<status status="PASS" starttime="20230721 15:50:29.210" endtime="20230721 15:50:29.211"/>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<var>${token}</var>
+<arg>Bearer${SPACE}${token}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20230721 15:50:29.211" level="INFO">${token} = Bearer gubu8746387dggdwgewucs8ayef887b6x3276276x</msg>
+<status status="PASS" starttime="20230721 15:50:29.211" endtime="20230721 15:50:29.211"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${token}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20230721 15:50:29.211" level="INFO">${token} = Bearer gubu8746387dggdwgewucs8ayef887b6x3276276x</msg>
+<status status="PASS" starttime="20230721 15:50:29.211" endtime="20230721 15:50:29.211"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${body}</var>
+<arg>name=${name_payload}</arg>
+<arg>job=${job_payload}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230721 15:50:29.212" level="INFO">${body} = {'name': 'coba satu', 'job': 'coba job'}</msg>
+<status status="PASS" starttime="20230721 15:50:29.211" endtime="20230721 15:50:29.212"/>
+</kw>
+<kw name="POST On Session" library="RequestsLibrary">
+<var>${Response}</var>
+<arg>listuser</arg>
+<arg>/api/users</arg>
+<arg>json=${body}</arg>
+<arg>headers=${header}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20230721 15:50:29.671" level="INFO">POST Request : url=https://reqres.in/api/users 
+ path_url=/api/users 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'X-API-Auth': '', 'Authorization': 'gubu8746387dggdwgewucs8ayef887b6x3276276x', 'Content-Length': '40'} 
+ body=b'{"name": "coba satu", "job": "coba job"}' 
+ </msg>
+<msg timestamp="20230721 15:50:29.671" level="INFO">POST Response : url=https://reqres.in/api/users 
+ status=201, reason=Created 
+ headers={'Date': 'Fri, 21 Jul 2023 08:50:31 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '86', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"56-5LCoI4XsAYe0Q3EWtnfJM6m2r40"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=bSb%2BKcUl0MIlrC6r8cYQuuZHI7ngJlR6W5rphjzNabbRMkPOcf%2BvynPDKbvLRG1O0BV3ktzxYLp0l%2B4uvY9puuLpmBIEBR2axsuxn0FF5YwTBUZVawELRiLgRQ%3D%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '7ea2325fec3e9f9b-SIN'} 
+ body={"name":"coba satu","job":"coba job","id":"84","createdAt":"2023-07-21T08:50:31.295Z"} 
+ </msg>
+<msg timestamp="20230721 15:50:29.671" level="INFO">${Response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20230721 15:50:29.212" endtime="20230721 15:50:29.671"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${Response.status_code}</arg>
+<arg>401</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20230721 15:50:29.671" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<msg timestamp="20230721 15:50:29.671" level="FAIL">201 != 401</msg>
+<status status="FAIL" starttime="20230721 15:50:29.671" endtime="20230721 15:50:29.671"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${Response.reason}</arg>
+<arg>UNAUTHORIZED</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" starttime="20230721 15:50:29.672" endtime="20230721 15:50:29.672"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${content}</var>
+<arg>${Response.content}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" starttime="20230721 15:50:29.672" endtime="20230721 15:50:29.672"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${Response.content}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20230721 15:50:29.672" endtime="20230721 15:50:29.672"/>
+</kw>
+<status status="FAIL" starttime="20230721 15:50:29.208" endtime="20230721 15:50:29.672"/>
+</kw>
+<status status="FAIL" starttime="20230721 15:50:29.207" endtime="20230721 15:50:29.672">201 != 401</status>
+</test>
+<doc>Negative Testcase - Create User Without Token</doc>
+<status status="FAIL" starttime="20230721 15:50:29.199" endtime="20230721 15:50:29.673"/>
+</suite>
+<suite id="s1-s10" name="POST-TCN004-User" source="D:\Testing-Interview\Bhumi Varta\AUTOMATION-API\testcase\POST-TCN004-User.robot">
+<test id="s1-s10-t1" name="TCN-004 Create User with validate name &gt;100 char" line="13">
+<kw name="Validate Status Code and Response Body">
+<tag>POST</tag>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>listuser</arg>
+<arg>${base_url}</arg>
+<arg>verify=True</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230721 15:50:29.686" level="INFO">Creating Session using : alias=listuser, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<status status="PASS" starttime="20230721 15:50:29.685" endtime="20230721 15:50:29.686"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${header}</var>
+<arg>Content-Type=application/json</arg>
+<arg>X-API-Auth=${EMPTY}</arg>
+<arg>Cache-Control=no-cache</arg>
+<arg>Access-Control-Allow-Origin=*</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230721 15:50:29.687" level="INFO">${header} = {'Content-Type': 'application/json', 'X-API-Auth': '', 'Cache-Control': 'no-cache', 'Access-Control-Allow-Origin': '*'}</msg>
+<status status="PASS" starttime="20230721 15:50:29.686" endtime="20230721 15:50:29.687"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${body}</var>
+<arg>name=${name_payload}</arg>
+<arg>job=${job_payload}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230721 15:50:29.687" level="INFO">${body} = {'name': 'Jumlah kata adalah jumlah kata dalam suatu teks, sedangkan jumlah karakter adalah jumlah semua karakter123', 'job': 'Testing'}</msg>
+<status status="PASS" starttime="20230721 15:50:29.687" endtime="20230721 15:50:29.687"/>
+</kw>
+<kw name="POST On Session" library="RequestsLibrary">
+<var>${Response}</var>
+<arg>listuser</arg>
+<arg>/api/users</arg>
+<arg>json=${body}</arg>
+<arg>headers=${header}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20230721 15:50:30.144" level="INFO">POST Request : url=https://reqres.in/api/users 
+ path_url=/api/users 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'X-API-Auth': '', 'Cache-Control': 'no-cache', 'Access-Control-Allow-Origin': '*', 'Content-Length': '136'} 
+ body=b'{"name": "Jumlah kata adalah jumlah kata dalam suatu teks, sedangkan jumlah karakter adalah jumlah semua karakter123", "job": "Testing"}' 
+ </msg>
+<msg timestamp="20230721 15:50:30.144" level="INFO">POST Response : url=https://reqres.in/api/users 
+ status=201, reason=Created 
+ headers={'Date': 'Fri, 21 Jul 2023 08:50:31 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '182', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"b6-JSh2HEleO5htZy+cyw19MAYo8SA"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=EO7Yy54FcVCqmFRnNFXS7VxKWB6SUUA3%2FmvHfTPtyRKbiRKTMR0mr96FMjiqUa2t03WZWvC6gSHr95HiyeheAUk9NGMozBSfF28USAxy14y5I26Kolv8KUuHLw%3D%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '7ea23262ef424a77-SIN'} 
+ body={"name":"Jumlah kata adalah jumlah kata dalam suatu teks, sedangkan jumlah karakter adalah jumlah semua karakter123","job":"Testing","id":"14","createdAt":"2023-07-21T08:50:31.772Z"} 
+ </msg>
+<msg timestamp="20230721 15:50:30.144" level="INFO">${Response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20230721 15:50:29.687" endtime="20230721 15:50:30.145"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${Response.status_code}</arg>
+<arg>201</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20230721 15:50:30.145" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20230721 15:50:30.145" endtime="20230721 15:50:30.145"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${content}</var>
+<arg>${Response.content}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20230721 15:50:30.146" level="INFO">${content} = {"name":"Jumlah kata adalah jumlah kata dalam suatu teks, sedangkan jumlah karakter adalah jumlah semua karakter123","job":"Testing","id":"14","createdAt":"2023-07-21T08:50:31.772Z"}</msg>
+<status status="PASS" starttime="20230721 15:50:30.145" endtime="20230721 15:50:30.146"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${Response.content}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230721 15:50:30.146" level="INFO">{"name":"Jumlah kata adalah jumlah kata dalam suatu teks, sedangkan jumlah karakter adalah jumlah semua karakter123","job":"Testing","id":"14","createdAt":"2023-07-21T08:50:31.772Z"}</msg>
+<status status="PASS" starttime="20230721 15:50:30.146" endtime="20230721 15:50:30.146"/>
+</kw>
+<kw name="Convert String To Json" library="JSONLibrary">
+<var>${jsondata}</var>
+<arg>${response.content}</arg>
+<doc>Convert String to JSON object</doc>
+<msg timestamp="20230721 15:50:30.146" level="INFO">${jsondata} = {'name': 'Jumlah kata adalah jumlah kata dalam suatu teks, sedangkan jumlah karakter adalah jumlah semua karakter123', 'job': 'Testing', 'id': '14', 'createdAt': '2023-07-21T08:50:31.772Z'}</msg>
+<status status="PASS" starttime="20230721 15:50:30.146" endtime="20230721 15:50:30.146"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${name}</var>
+<arg>${jsondata}[name]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230721 15:50:30.147" level="INFO">${name} = Jumlah kata adalah jumlah kata dalam suatu teks, sedangkan jumlah karakter adalah jumlah semua karakter123</msg>
+<status status="PASS" starttime="20230721 15:50:30.146" endtime="20230721 15:50:30.147"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${job}</var>
+<arg>${jsondata}[job]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230721 15:50:30.147" level="INFO">${job} = Testing</msg>
+<status status="PASS" starttime="20230721 15:50:30.147" endtime="20230721 15:50:30.147"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${id}</var>
+<arg>${jsondata}[id]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230721 15:50:30.147" level="INFO">${id} = 14</msg>
+<status status="PASS" starttime="20230721 15:50:30.147" endtime="20230721 15:50:30.147"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${createdAt}</var>
+<arg>${jsondata}[createdAt]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230721 15:50:30.147" level="INFO">${createdAt} = 2023-07-21T08:50:31.772Z</msg>
+<status status="PASS" starttime="20230721 15:50:30.147" endtime="20230721 15:50:30.147"/>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<var>${length100char}</var>
+<arg>${name}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20230721 15:50:30.147" level="INFO">Length is 106</msg>
+<msg timestamp="20230721 15:50:30.147" level="INFO">${length100char} = 106</msg>
+<status status="PASS" starttime="20230721 15:50:30.147" endtime="20230721 15:50:30.147"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${length100char}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230721 15:50:30.148" level="INFO">106</msg>
+<status status="PASS" starttime="20230721 15:50:30.148" endtime="20230721 15:50:30.148"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${value}</var>
+<arg>${length100char}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20230721 15:50:30.148" level="INFO">${value} = 106</msg>
+<status status="PASS" starttime="20230721 15:50:30.148" endtime="20230721 15:50:30.148"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${check}</var>
+<arg>${value} &gt; 100</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230721 15:50:30.148" level="INFO">${check} = True</msg>
+<status status="PASS" starttime="20230721 15:50:30.148" endtime="20230721 15:50:30.148"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${check}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20230721 15:50:30.148" endtime="20230721 15:50:30.148"/>
+</kw>
+<status status="PASS" starttime="20230721 15:50:29.685" endtime="20230721 15:50:30.148"/>
+</kw>
+<status status="PASS" starttime="20230721 15:50:29.683" endtime="20230721 15:50:30.149"/>
+</test>
+<doc>Negative Testcase - Create User with validate name &gt;100 char</doc>
+<status status="PASS" starttime="20230721 15:50:29.674" endtime="20230721 15:50:30.149"/>
+</suite>
+<suite id="s1-s11" name="POST-TCN005-User" source="D:\Testing-Interview\Bhumi Varta\AUTOMATION-API\testcase\POST-TCN005-User.robot">
+<test id="s1-s11-t1" name="TCN-005 Create User with validate job &lt;1 char" line="12">
+<kw name="Validate Status Code and Response Body">
+<tag>POST</tag>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>listuser</arg>
+<arg>${base_url}</arg>
+<arg>verify=True</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230721 15:50:30.162" level="INFO">Creating Session using : alias=listuser, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<status status="PASS" starttime="20230721 15:50:30.161" endtime="20230721 15:50:30.162"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${body}</var>
+<arg>name=${EMPTY}</arg>
+<arg>job=${job_payload}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230721 15:50:30.163" level="INFO">${body} = {'name': '', 'job': 'Testing'}</msg>
+<status status="PASS" starttime="20230721 15:50:30.162" endtime="20230721 15:50:30.163"/>
+</kw>
+<kw name="POST On Session" library="RequestsLibrary">
+<var>${Response}</var>
+<arg>listuser</arg>
+<arg>/api/users</arg>
+<arg>json=${body}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20230721 15:50:30.613" level="INFO">POST Request : url=https://reqres.in/api/users 
+ path_url=/api/users 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '30', 'Content-Type': 'application/json'} 
+ body=b'{"name": "", "job": "Testing"}' 
+ </msg>
+<msg timestamp="20230721 15:50:30.613" level="INFO">POST Response : url=https://reqres.in/api/users 
+ status=201, reason=Created 
+ headers={'Date': 'Fri, 21 Jul 2023 08:50:32 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '77', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"4d-FY/YVHSWblfSEuifRG6IJsCI7AA"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=Ng9SBNilCHH%2F8yeiLErfaYhQ1folHC0yo5B3FqQOZ3ZUIaKSx9PvbidzauDwpfmVYCZwg0%2BFCES56KvX3oAfwKKgFWvIJNrVLfJdk8kvU3j8yqhH634w6J%2BGFw%3D%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '7ea23265ec803f55-SIN'} 
+ body={"name":"","job":"Testing","id":"614","createdAt":"2023-07-21T08:50:32.244Z"} 
+ </msg>
+<msg timestamp="20230721 15:50:30.613" level="INFO">${Response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20230721 15:50:30.163" endtime="20230721 15:50:30.613"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${Response.status_code}</arg>
+<arg>201</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20230721 15:50:30.613" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20230721 15:50:30.613" endtime="20230721 15:50:30.614"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${content}</var>
+<arg>${Response.content}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20230721 15:50:30.614" level="INFO">${content} = {"name":"","job":"Testing","id":"614","createdAt":"2023-07-21T08:50:32.244Z"}</msg>
+<status status="PASS" starttime="20230721 15:50:30.614" endtime="20230721 15:50:30.614"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${Response.content}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230721 15:50:30.614" level="INFO">{"name":"","job":"Testing","id":"614","createdAt":"2023-07-21T08:50:32.244Z"}</msg>
+<status status="PASS" starttime="20230721 15:50:30.614" endtime="20230721 15:50:30.614"/>
+</kw>
+<kw name="Convert String To Json" library="JSONLibrary">
+<var>${jsondata}</var>
+<arg>${response.content}</arg>
+<doc>Convert String to JSON object</doc>
+<msg timestamp="20230721 15:50:30.615" level="INFO">${jsondata} = {'name': '', 'job': 'Testing', 'id': '614', 'createdAt': '2023-07-21T08:50:32.244Z'}</msg>
+<status status="PASS" starttime="20230721 15:50:30.614" endtime="20230721 15:50:30.615"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${name}</var>
+<arg>${jsondata}[name]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230721 15:50:30.615" level="INFO">${name} = </msg>
+<status status="PASS" starttime="20230721 15:50:30.615" endtime="20230721 15:50:30.615"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${job}</var>
+<arg>${jsondata}[job]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230721 15:50:30.615" level="INFO">${job} = Testing</msg>
+<status status="PASS" starttime="20230721 15:50:30.615" endtime="20230721 15:50:30.615"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${id}</var>
+<arg>${jsondata}[id]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230721 15:50:30.615" level="INFO">${id} = 614</msg>
+<status status="PASS" starttime="20230721 15:50:30.615" endtime="20230721 15:50:30.615"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${createdAt}</var>
+<arg>${jsondata}[createdAt]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230721 15:50:30.616" level="INFO">${createdAt} = 2023-07-21T08:50:32.244Z</msg>
+<status status="PASS" starttime="20230721 15:50:30.615" endtime="20230721 15:50:30.616"/>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<var>${length&lt;1char}</var>
+<arg>${job}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20230721 15:50:30.616" level="INFO">Length is 7</msg>
+<msg timestamp="20230721 15:50:30.616" level="INFO">${length&lt;1char} = 7</msg>
+<status status="PASS" starttime="20230721 15:50:30.616" endtime="20230721 15:50:30.616"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${length&lt;1char}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230721 15:50:30.616" level="INFO">7</msg>
+<status status="PASS" starttime="20230721 15:50:30.616" endtime="20230721 15:50:30.616"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${value}</var>
+<arg>${length&lt;1char}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20230721 15:50:30.616" level="INFO">${value} = 7</msg>
+<status status="PASS" starttime="20230721 15:50:30.616" endtime="20230721 15:50:30.616"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${check}</var>
+<arg>${value} &lt;1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230721 15:50:30.617" level="INFO">${check} = False</msg>
+<status status="PASS" starttime="20230721 15:50:30.616" endtime="20230721 15:50:30.617"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${check}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<msg timestamp="20230721 15:50:30.617" level="FAIL">'False' should be true.</msg>
+<status status="FAIL" starttime="20230721 15:50:30.617" endtime="20230721 15:50:30.617"/>
+</kw>
+<status status="FAIL" starttime="20230721 15:50:30.161" endtime="20230721 15:50:30.617"/>
+</kw>
+<status status="FAIL" starttime="20230721 15:50:30.160" endtime="20230721 15:50:30.617">'False' should be true.</status>
+</test>
+<doc>Negative Testcase - Create User with validate job &lt;1 char</doc>
+<status status="FAIL" starttime="20230721 15:50:30.152" endtime="20230721 15:50:30.618"/>
+</suite>
+<suite id="s1-s12" name="POST-TCN006-User" source="D:\Testing-Interview\Bhumi Varta\AUTOMATION-API\testcase\POST-TCN006-User.robot">
+<test id="s1-s12-t1" name="TCN-006 Create User with validate job &gt;100 char" line="13">
+<kw name="Validate Status Code and Response Body">
+<tag>POST</tag>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>listuser</arg>
+<arg>${base_url}</arg>
+<arg>verify=True</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230721 15:50:30.631" level="INFO">Creating Session using : alias=listuser, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<status status="PASS" starttime="20230721 15:50:30.631" endtime="20230721 15:50:30.631"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${header}</var>
+<arg>Content-Type=application/json</arg>
+<arg>X-API-Auth=${EMPTY}</arg>
+<arg>Cache-Control=no-cache</arg>
+<arg>Access-Control-Allow-Origin=*</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230721 15:50:30.632" level="INFO">${header} = {'Content-Type': 'application/json', 'X-API-Auth': '', 'Cache-Control': 'no-cache', 'Access-Control-Allow-Origin': '*'}</msg>
+<status status="PASS" starttime="20230721 15:50:30.631" endtime="20230721 15:50:30.632"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${body}</var>
+<arg>name=${name_payload}</arg>
+<arg>job=${job_payload}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230721 15:50:30.633" level="INFO">${body} = {'name': 'Testing', 'job': 'jumlah semua karakterkurang 100'}</msg>
+<status status="PASS" starttime="20230721 15:50:30.632" endtime="20230721 15:50:30.633"/>
+</kw>
+<kw name="POST On Session" library="RequestsLibrary">
+<var>${Response}</var>
+<arg>listuser</arg>
+<arg>/api/users</arg>
+<arg>json=${body}</arg>
+<arg>headers=${header}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20230721 15:50:31.098" level="INFO">POST Request : url=https://reqres.in/api/users 
+ path_url=/api/users 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'X-API-Auth': '', 'Cache-Control': 'no-cache', 'Access-Control-Allow-Origin': '*', 'Content-Length': '61'} 
+ body=b'{"name": "Testing", "job": "jumlah semua karakterkurang 100"}' 
+ </msg>
+<msg timestamp="20230721 15:50:31.098" level="INFO">POST Response : url=https://reqres.in/api/users 
+ status=201, reason=Created 
+ headers={'Date': 'Fri, 21 Jul 2023 08:50:32 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '108', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"6c-HypywvlpRnrmqJhfGcWpFBC0WDw"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=7xb0ozTY4GRJaNY72gPVSDhDB9h72eXA7e5H19hFYcbJ9vQtJwOK4IGQgSAQE7tu32hfL6lpW4QqTZY7wxDWkvVKda2WG3kX3R133S6VL1PGbBAdcn9jrgeRWw%3D%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '7ea23268e8794cad-SIN'} 
+ body={"name":"Testing","job":"jumlah semua karakterkurang 100","id":"641","createdAt":"2023-07-21T08:50:32.729Z"} 
+ </msg>
+<msg timestamp="20230721 15:50:31.098" level="INFO">${Response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20230721 15:50:30.633" endtime="20230721 15:50:31.098"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${Response.status_code}</arg>
+<arg>400</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20230721 15:50:31.099" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<msg timestamp="20230721 15:50:31.099" level="FAIL">201 != 400</msg>
+<status status="FAIL" starttime="20230721 15:50:31.098" endtime="20230721 15:50:31.099"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${Response.reason}</arg>
+<arg>Bad Request</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" starttime="20230721 15:50:31.099" endtime="20230721 15:50:31.099"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${content}</var>
+<arg>${Response.content}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" starttime="20230721 15:50:31.099" endtime="20230721 15:50:31.099"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${Response.content}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20230721 15:50:31.099" endtime="20230721 15:50:31.099"/>
+</kw>
+<kw name="Convert String To Json" library="JSONLibrary">
+<var>${jsondata}</var>
+<arg>${response.content}</arg>
+<doc>Convert String to JSON object</doc>
+<status status="NOT RUN" starttime="20230721 15:50:31.099" endtime="20230721 15:50:31.099"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${name}</var>
+<arg>${jsondata}[name]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20230721 15:50:31.099" endtime="20230721 15:50:31.099"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${job}</var>
+<arg>${jsondata}[job]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20230721 15:50:31.099" endtime="20230721 15:50:31.099"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${id}</var>
+<arg>${jsondata}[id]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20230721 15:50:31.099" endtime="20230721 15:50:31.099"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${createdAt}</var>
+<arg>${jsondata}[createdAt]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20230721 15:50:31.099" endtime="20230721 15:50:31.099"/>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<var>${length100char}</var>
+<arg>${name}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="NOT RUN" starttime="20230721 15:50:31.099" endtime="20230721 15:50:31.099"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${length100char}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20230721 15:50:31.099" endtime="20230721 15:50:31.100"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${value}</var>
+<arg>${length100char}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="NOT RUN" starttime="20230721 15:50:31.100" endtime="20230721 15:50:31.100"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${check}</var>
+<arg>${value} &gt; 100</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20230721 15:50:31.100" endtime="20230721 15:50:31.100"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${check}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="NOT RUN" starttime="20230721 15:50:31.100" endtime="20230721 15:50:31.100"/>
+</kw>
+<status status="FAIL" starttime="20230721 15:50:30.630" endtime="20230721 15:50:31.100"/>
+</kw>
+<status status="FAIL" starttime="20230721 15:50:30.628" endtime="20230721 15:50:31.100">201 != 400</status>
+</test>
+<doc>Negative Testcase - Create User with validate job &gt;100 char</doc>
+<status status="FAIL" starttime="20230721 15:50:30.619" endtime="20230721 15:50:31.101"/>
+</suite>
+<suite id="s1-s13" name="POST-TCN007-User" source="D:\Testing-Interview\Bhumi Varta\AUTOMATION-API\testcase\POST-TCN007-User.robot">
+<test id="s1-s13-t1" name="TCN-007 Create User with validate name &lt;1 char" line="13">
+<kw name="Validate Status Code and Response Body">
+<tag>POST</tag>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>listuser</arg>
+<arg>${base_url}</arg>
+<arg>verify=True</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230721 15:50:31.114" level="INFO">Creating Session using : alias=listuser, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<status status="PASS" starttime="20230721 15:50:31.112" endtime="20230721 15:50:31.114"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${body}</var>
+<arg>name=${EMPTY}</arg>
+<arg>job=${job_payload}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230721 15:50:31.114" level="INFO">${body} = {'name': '', 'job': 'Testing'}</msg>
+<status status="PASS" starttime="20230721 15:50:31.114" endtime="20230721 15:50:31.114"/>
+</kw>
+<kw name="POST On Session" library="RequestsLibrary">
+<var>${Response}</var>
+<arg>listuser</arg>
+<arg>/api/users</arg>
+<arg>json=${body}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20230721 15:50:31.582" level="INFO">POST Request : url=https://reqres.in/api/users 
+ path_url=/api/users 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '30', 'Content-Type': 'application/json'} 
+ body=b'{"name": "", "job": "Testing"}' 
+ </msg>
+<msg timestamp="20230721 15:50:31.582" level="INFO">POST Response : url=https://reqres.in/api/users 
+ status=201, reason=Created 
+ headers={'Date': 'Fri, 21 Jul 2023 08:50:33 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '77', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"4d-4l116kWafyzXdElQhdiB8WlLW9Y"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=FR78QckE5te3iI8XijSFyM6f6QOGroz0OD%2FwH5M9OckNyCQEngUqPiI4ACBreTYaIOibi1tinZYuZC5BX92L9gbnTq1z5SmVOj2VZbLPC7NwpajIHcJYn95H7Q%3D%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '7ea2326bca882ea4-SIN'} 
+ body={"name":"","job":"Testing","id":"323","createdAt":"2023-07-21T08:50:33.199Z"} 
+ </msg>
+<msg timestamp="20230721 15:50:31.582" level="INFO">${Response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20230721 15:50:31.114" endtime="20230721 15:50:31.582"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${Response.status_code}</arg>
+<arg>201</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20230721 15:50:31.583" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20230721 15:50:31.582" endtime="20230721 15:50:31.583"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${content}</var>
+<arg>${Response.content}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20230721 15:50:31.583" level="INFO">${content} = {"name":"","job":"Testing","id":"323","createdAt":"2023-07-21T08:50:33.199Z"}</msg>
+<status status="PASS" starttime="20230721 15:50:31.583" endtime="20230721 15:50:31.583"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${Response.content}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230721 15:50:31.584" level="INFO">{"name":"","job":"Testing","id":"323","createdAt":"2023-07-21T08:50:33.199Z"}</msg>
+<status status="PASS" starttime="20230721 15:50:31.583" endtime="20230721 15:50:31.584"/>
+</kw>
+<kw name="Convert String To Json" library="JSONLibrary">
+<var>${jsondata}</var>
+<arg>${response.content}</arg>
+<doc>Convert String to JSON object</doc>
+<msg timestamp="20230721 15:50:31.584" level="INFO">${jsondata} = {'name': '', 'job': 'Testing', 'id': '323', 'createdAt': '2023-07-21T08:50:33.199Z'}</msg>
+<status status="PASS" starttime="20230721 15:50:31.584" endtime="20230721 15:50:31.584"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${name}</var>
+<arg>${jsondata}[name]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230721 15:50:31.584" level="INFO">${name} = </msg>
+<status status="PASS" starttime="20230721 15:50:31.584" endtime="20230721 15:50:31.584"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${job}</var>
+<arg>${jsondata}[job]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230721 15:50:31.585" level="INFO">${job} = Testing</msg>
+<status status="PASS" starttime="20230721 15:50:31.584" endtime="20230721 15:50:31.585"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${id}</var>
+<arg>${jsondata}[id]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230721 15:50:31.585" level="INFO">${id} = 323</msg>
+<status status="PASS" starttime="20230721 15:50:31.585" endtime="20230721 15:50:31.585"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${createdAt}</var>
+<arg>${jsondata}[createdAt]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230721 15:50:31.585" level="INFO">${createdAt} = 2023-07-21T08:50:33.199Z</msg>
+<status status="PASS" starttime="20230721 15:50:31.585" endtime="20230721 15:50:31.585"/>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<var>${length&lt;1char}</var>
+<arg>${name}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20230721 15:50:31.585" level="INFO">Length is 0</msg>
+<msg timestamp="20230721 15:50:31.585" level="INFO">${length&lt;1char} = 0</msg>
+<status status="PASS" starttime="20230721 15:50:31.585" endtime="20230721 15:50:31.585"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${length&lt;1char}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230721 15:50:31.586" level="INFO">0</msg>
+<status status="PASS" starttime="20230721 15:50:31.586" endtime="20230721 15:50:31.586"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${value}</var>
+<arg>${length&lt;1char}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20230721 15:50:31.586" level="INFO">${value} = 0</msg>
+<status status="PASS" starttime="20230721 15:50:31.586" endtime="20230721 15:50:31.586"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${check}</var>
+<arg>${value} &lt;1</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230721 15:50:31.586" level="INFO">${check} = True</msg>
+<status status="PASS" starttime="20230721 15:50:31.586" endtime="20230721 15:50:31.586"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${check}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20230721 15:50:31.586" endtime="20230721 15:50:31.587"/>
+</kw>
+<status status="PASS" starttime="20230721 15:50:31.112" endtime="20230721 15:50:31.587"/>
+</kw>
+<status status="PASS" starttime="20230721 15:50:31.111" endtime="20230721 15:50:31.587"/>
+</test>
+<doc>Negative Testcase - Create User with validate name &lt;1 char</doc>
+<status status="PASS" starttime="20230721 15:50:31.103" endtime="20230721 15:50:31.588"/>
+</suite>
+<suite id="s1-s14" name="POST-TCP001-User" source="D:\Testing-Interview\Bhumi Varta\AUTOMATION-API\testcase\POST-TCP001-User.robot">
+<test id="s1-s14-t1" name="TCP-001 Create data user successfully" line="14">
+<kw name="Validate Status Code and Response Body">
+<tag>POST</tag>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>listuser</arg>
+<arg>${base_url}</arg>
+<arg>verify=True</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230721 15:50:31.599" level="INFO">Creating Session using : alias=listuser, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<status status="PASS" starttime="20230721 15:50:31.598" endtime="20230721 15:50:31.599"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${body}</var>
+<arg>name=${name_payload}</arg>
+<arg>job=${job_payload}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230721 15:50:31.599" level="INFO">${body} = {'name': 'Employee-Success', 'job': 'Testing'}</msg>
+<status status="PASS" starttime="20230721 15:50:31.599" endtime="20230721 15:50:31.599"/>
+</kw>
+<kw name="POST On Session" library="RequestsLibrary">
+<var>${Response}</var>
+<arg>listuser</arg>
+<arg>/api/users</arg>
+<arg>json=${body}</arg>
+<arg>expected_status=ANY</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20230721 15:50:32.045" level="INFO">POST Request : url=https://reqres.in/api/users 
+ path_url=/api/users 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '46', 'Content-Type': 'application/json'} 
+ body=b'{"name": "Employee-Success", "job": "Testing"}' 
+ </msg>
+<msg timestamp="20230721 15:50:32.045" level="INFO">POST Response : url=https://reqres.in/api/users 
+ status=201, reason=Created 
+ headers={'Date': 'Fri, 21 Jul 2023 08:50:33 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '93', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"5d-bMQ5oG59mQ9zipHSduTa0X1FNFY"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=nNEfEtmGiM%2FfyqFOKFhQITfxGHCEPfITVIPREKkeE8xRYm%2FF%2BmUMJW2X3%2F2JKuFtSxK18MD99Gf%2FPUarr%2B8%2F1jum957TcEk9j3gUB%2FBaD823pB%2BoVYX0oln%2Frw%3D%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '7ea2326ede94408f-SIN'} 
+ body={"name":"Employee-Success","job":"Testing","id":"492","createdAt":"2023-07-21T08:50:33.677Z"} 
+ </msg>
+<msg timestamp="20230721 15:50:32.046" level="INFO">${Response} = &lt;Response [201]&gt;</msg>
+<status status="PASS" starttime="20230721 15:50:31.599" endtime="20230721 15:50:32.046"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${Response.status_code}</arg>
+<arg>201</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20230721 15:50:32.046" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20230721 15:50:32.046" endtime="20230721 15:50:32.046"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${Response.reason}</arg>
+<arg>Created</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20230721 15:50:32.046" endtime="20230721 15:50:32.047"/>
+</kw>
+<kw name="Convert String To Json" library="JSONLibrary">
+<var>${jsondata}</var>
+<arg>${response.content}</arg>
+<doc>Convert String to JSON object</doc>
+<msg timestamp="20230721 15:50:32.047" level="INFO">${jsondata} = {'name': 'Employee-Success', 'job': 'Testing', 'id': '492', 'createdAt': '2023-07-21T08:50:33.677Z'}</msg>
+<status status="PASS" starttime="20230721 15:50:32.047" endtime="20230721 15:50:32.047"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${name}</var>
+<arg>${jsondata}[name]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230721 15:50:32.048" level="INFO">${name} = Employee-Success</msg>
+<status status="PASS" starttime="20230721 15:50:32.047" endtime="20230721 15:50:32.048"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${job}</var>
+<arg>${jsondata}[job]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230721 15:50:32.048" level="INFO">${job} = Testing</msg>
+<status status="PASS" starttime="20230721 15:50:32.048" endtime="20230721 15:50:32.048"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${id}</var>
+<arg>${jsondata}[id]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230721 15:50:32.048" level="INFO">${id} = 492</msg>
+<status status="PASS" starttime="20230721 15:50:32.048" endtime="20230721 15:50:32.048"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${createdAt}</var>
+<arg>${jsondata}[createdAt]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230721 15:50:32.048" level="INFO">${createdAt} = 2023-07-21T08:50:33.677Z</msg>
+<status status="PASS" starttime="20230721 15:50:32.048" endtime="20230721 15:50:32.049"/>
+</kw>
+<kw name="Get Current Date" library="DateTime">
+<var>${CurrentDate}</var>
+<arg>result_format=%Y-%m-%d</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20230721 15:50:32.049" level="INFO">${CurrentDate} = 2023-07-21</msg>
+<status status="PASS" starttime="20230721 15:50:32.049" endtime="20230721 15:50:32.049"/>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<var>${date}</var>
+<arg>${createdAt}</arg>
+<arg>result_format=%Y-%m-%d</arg>
+<arg>exclude_millis=yes</arg>
+<doc>Converts between supported `date formats`.</doc>
+<msg timestamp="20230721 15:50:32.054" level="INFO">${date} = 2023-07-21</msg>
+<status status="PASS" starttime="20230721 15:50:32.049" endtime="20230721 15:50:32.054"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${date}</arg>
+<arg>${CurrentDate}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230721 15:50:32.054" endtime="20230721 15:50:32.054"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${name}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230721 15:50:32.055" level="INFO">Employee-Success</msg>
+<status status="PASS" starttime="20230721 15:50:32.055" endtime="20230721 15:50:32.055"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${job}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230721 15:50:32.055" level="INFO">Testing</msg>
+<status status="PASS" starttime="20230721 15:50:32.055" endtime="20230721 15:50:32.055"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${name}</arg>
+<arg>${name_payload}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20230721 15:50:32.055" endtime="20230721 15:50:32.056"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${job}</arg>
+<arg>${job_payload}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20230721 15:50:32.056" endtime="20230721 15:50:32.056"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${name}</var>
+<arg>isinstance($name, str)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230721 15:50:32.057" level="INFO">${name} = True</msg>
+<status status="PASS" starttime="20230721 15:50:32.056" endtime="20230721 15:50:32.057"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${name}==True</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20230721 15:50:32.057" endtime="20230721 15:50:32.057"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${job}</var>
+<arg>isinstance($job, str)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230721 15:50:32.058" level="INFO">${job} = True</msg>
+<status status="PASS" starttime="20230721 15:50:32.057" endtime="20230721 15:50:32.058"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${job}==True</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20230721 15:50:32.058" endtime="20230721 15:50:32.058"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${id}</var>
+<arg>isinstance($id, str)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230721 15:50:32.059" level="INFO">${id} = True</msg>
+<status status="PASS" starttime="20230721 15:50:32.058" endtime="20230721 15:50:32.059"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${id}==True</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20230721 15:50:32.059" endtime="20230721 15:50:32.060"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${createdAt}</var>
+<arg>isinstance($createdAt, str)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230721 15:50:32.060" level="INFO">${createdAt} = True</msg>
+<status status="PASS" starttime="20230721 15:50:32.060" endtime="20230721 15:50:32.060"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${createdAt}==True</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20230721 15:50:32.060" endtime="20230721 15:50:32.060"/>
+</kw>
+<status status="PASS" starttime="20230721 15:50:31.598" endtime="20230721 15:50:32.060"/>
+</kw>
+<status status="PASS" starttime="20230721 15:50:31.598" endtime="20230721 15:50:32.061"/>
+</test>
+<doc>Positive Testcase - Create User with check type data and response</doc>
+<status status="PASS" starttime="20230721 15:50:31.589" endtime="20230721 15:50:32.062"/>
+</suite>
+<suite id="s1-s15" name="PUT-TCP001-User" source="D:\Testing-Interview\Bhumi Varta\AUTOMATION-API\testcase\PUT-TCP001-User.robot">
+<test id="s1-s15-t1" name="TCP-001 Update data user successfully" line="15">
+<kw name="Validate Status Code and Response Body">
+<tag>PUT</tag>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>listuser</arg>
+<arg>${base_url}</arg>
+<arg>verify=True</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230721 15:50:32.077" level="INFO">Creating Session using : alias=listuser, url=https://reqres.in, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=True,                     debug=0 </msg>
+<status status="PASS" starttime="20230721 15:50:32.077" endtime="20230721 15:50:32.077"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${body}</var>
+<arg>name=${name_payload}</arg>
+<arg>job=${job_payload}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230721 15:50:32.079" level="INFO">${body} = {'name': 'Employee-Success', 'job': 'Testing'}</msg>
+<status status="PASS" starttime="20230721 15:50:32.078" endtime="20230721 15:50:32.079"/>
+</kw>
+<kw name="PUT On Session" library="RequestsLibrary">
+<var>${Response}</var>
+<arg>listuser</arg>
+<arg>/api/users/${Id_User}</arg>
+<arg>json=${body}</arg>
+<arg>expected_status=ANY</arg>
+<doc>Sends a PUT request on a previously created HTTP Session.</doc>
+<msg timestamp="20230721 15:50:32.547" level="INFO">PUT Request : url=https://reqres.in/api/users/4 
+ path_url=/api/users/4 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '46', 'Content-Type': 'application/json'} 
+ body=b'{"name": "Employee-Success", "job": "Testing"}' 
+ </msg>
+<msg timestamp="20230721 15:50:32.547" level="INFO">PUT Response : url=https://reqres.in/api/users/4 
+ status=200, reason=OK 
+ headers={'Date': 'Fri, 21 Jul 2023 08:50:34 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"52-T/vBh3OVY9lChBwWD8ck9FcOVQc"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=K1DRIfEynqTAwkygrq8r7hxP9fkB%2FdrbULWbO8MmcgdhJJoufgCtVVFKT1%2B0CJvum%2BJTro9VfEY6USmvJ3tgY8H0558J6qMjb3J5Aj4zuOybdhm6zgeZps7Hpw%3D%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Vary': 'Accept-Encoding', 'Server': 'cloudflare', 'CF-RAY': '7ea23271db343e5b-SIN', 'Content-Encoding': 'gzip'} 
+ body={"name":"Employee-Success","job":"Testing","updatedAt":"2023-07-21T08:50:34.169Z"} 
+ </msg>
+<msg timestamp="20230721 15:50:32.547" level="INFO">${Response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230721 15:50:32.079" endtime="20230721 15:50:32.547"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${Response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20230721 15:50:32.548" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20230721 15:50:32.547" endtime="20230721 15:50:32.548"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${Response.reason}</arg>
+<arg>OK</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20230721 15:50:32.548" endtime="20230721 15:50:32.548"/>
+</kw>
+<kw name="Convert String To Json" library="JSONLibrary">
+<var>${jsondata}</var>
+<arg>${response.content}</arg>
+<doc>Convert String to JSON object</doc>
+<msg timestamp="20230721 15:50:32.548" level="INFO">${jsondata} = {'name': 'Employee-Success', 'job': 'Testing', 'updatedAt': '2023-07-21T08:50:34.169Z'}</msg>
+<status status="PASS" starttime="20230721 15:50:32.548" endtime="20230721 15:50:32.548"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${name}</var>
+<arg>${jsondata}[name]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230721 15:50:32.549" level="INFO">${name} = Employee-Success</msg>
+<status status="PASS" starttime="20230721 15:50:32.549" endtime="20230721 15:50:32.549"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${job}</var>
+<arg>${jsondata}[job]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230721 15:50:32.549" level="INFO">${job} = Testing</msg>
+<status status="PASS" starttime="20230721 15:50:32.549" endtime="20230721 15:50:32.549"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${updatedAt}</var>
+<arg>${jsondata}[updatedAt]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20230721 15:50:32.549" level="INFO">${updatedAt} = 2023-07-21T08:50:34.169Z</msg>
+<status status="PASS" starttime="20230721 15:50:32.549" endtime="20230721 15:50:32.549"/>
+</kw>
+<kw name="Get Current Date" library="DateTime">
+<var>${CurrentDate}</var>
+<arg>result_format=%Y-%m-%d</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20230721 15:50:32.549" level="INFO">${CurrentDate} = 2023-07-21</msg>
+<status status="PASS" starttime="20230721 15:50:32.549" endtime="20230721 15:50:32.549"/>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<var>${date}</var>
+<arg>${updatedAt}</arg>
+<arg>result_format=%Y-%m-%d</arg>
+<arg>exclude_millis=yes</arg>
+<doc>Converts between supported `date formats`.</doc>
+<msg timestamp="20230721 15:50:32.550" level="INFO">${date} = 2023-07-21</msg>
+<status status="PASS" starttime="20230721 15:50:32.549" endtime="20230721 15:50:32.550"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${date}</arg>
+<arg>${CurrentDate}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230721 15:50:32.550" endtime="20230721 15:50:32.550"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${name}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230721 15:50:32.550" level="INFO">Employee-Success</msg>
+<status status="PASS" starttime="20230721 15:50:32.550" endtime="20230721 15:50:32.550"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${job}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230721 15:50:32.550" level="INFO">Testing</msg>
+<status status="PASS" starttime="20230721 15:50:32.550" endtime="20230721 15:50:32.550"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${name}</arg>
+<arg>${name_payload}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20230721 15:50:32.551" endtime="20230721 15:50:32.551"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${job}</arg>
+<arg>${job_payload}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20230721 15:50:32.551" endtime="20230721 15:50:32.551"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${name}</var>
+<arg>isinstance($name, str)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230721 15:50:32.551" level="INFO">${name} = True</msg>
+<status status="PASS" starttime="20230721 15:50:32.551" endtime="20230721 15:50:32.551"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${name}==True</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20230721 15:50:32.551" endtime="20230721 15:50:32.552"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${job}</var>
+<arg>isinstance($job, str)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230721 15:50:32.552" level="INFO">${job} = True</msg>
+<status status="PASS" starttime="20230721 15:50:32.552" endtime="20230721 15:50:32.552"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${job}==True</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20230721 15:50:32.552" endtime="20230721 15:50:32.552"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${updatedAt}</var>
+<arg>isinstance($updatedAt, str)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20230721 15:50:32.553" level="INFO">${updatedAt} = True</msg>
+<status status="PASS" starttime="20230721 15:50:32.553" endtime="20230721 15:50:32.553"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${updatedAt}==True</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20230721 15:50:32.553" endtime="20230721 15:50:32.553"/>
+</kw>
+<status status="PASS" starttime="20230721 15:50:32.077" endtime="20230721 15:50:32.553"/>
+</kw>
+<status status="PASS" starttime="20230721 15:50:32.076" endtime="20230721 15:50:32.553"/>
+</test>
+<doc>Positive Testcase - Update data User with check type data and response</doc>
+<status status="PASS" starttime="20230721 15:50:32.063" endtime="20230721 15:50:32.554"/>
+</suite>
+<status status="FAIL" starttime="20230721 15:50:26.591" endtime="20230721 15:50:32.555"/>
+</suite>
+<statistics>
+<total>
+<stat pass="11" fail="4" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="11" fail="4" skip="0" id="s1" name="Testcase">Testcase</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="DELETE-TCP001-User">Testcase.DELETE-TCP001-User</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s2" name="GET-TCN001-User">Testcase.GET-TCN001-User</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s3" name="GET-TCN002-User">Testcase.GET-TCN002-User</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s4" name="GET-TCP001-User">Testcase.GET-TCP001-User</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s5" name="GET-TCP002-User">Testcase.GET-TCP002-User</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s6" name="GET-TCP003-User">Testcase.GET-TCP003-User</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s7" name="POST-TCN001-User">Testcase.POST-TCN001-User</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s8" name="POST-TCN002-User">Testcase.POST-TCN002-User</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s9" name="POST-TCN003-User">Testcase.POST-TCN003-User</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s10" name="POST-TCN004-User">Testcase.POST-TCN004-User</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s11" name="POST-TCN005-User">Testcase.POST-TCN005-User</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s12" name="POST-TCN006-User">Testcase.POST-TCN006-User</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s13" name="POST-TCN007-User">Testcase.POST-TCN007-User</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s14" name="POST-TCP001-User">Testcase.POST-TCP001-User</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s15" name="PUT-TCP001-User">Testcase.PUT-TCP001-User</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

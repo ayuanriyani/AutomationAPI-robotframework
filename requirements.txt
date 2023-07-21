@@ -1,0 +1,6 @@
+# This file lists the dependencies required for running the framework.
+robotframework
+robotframework-requests 
+robotframework-jsonlibrary
+
+
